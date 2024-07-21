@@ -1,14 +1,13 @@
 package domain.receita;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import domain.usuario.Usuario;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +22,8 @@ public class Receita {
     @GeneratedValue
     private UUID id;
 
+    private LocalDate data;
+
     private Double saldoLiquido;
 
     private Double rendimentoAluguel;
@@ -30,4 +31,8 @@ public class Receita {
     private Double rendimentoAplicacoes;
 
     private Double outros;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
