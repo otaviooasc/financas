@@ -1,9 +1,7 @@
 package domain.despesasfixas;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import domain.usuario.Usuario;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "despesas-fixas")
-public class DespesasFixas {
+public class DespesaFixa {
 
     @Id
     @GeneratedValue
@@ -26,4 +24,8 @@ public class DespesasFixas {
     private String nome;
 
     private String valor;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
