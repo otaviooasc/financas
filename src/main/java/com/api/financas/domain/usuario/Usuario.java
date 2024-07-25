@@ -1,8 +1,8 @@
-package domain.usuario;
+package com.api.financas.domain.usuario;
 
-import domain.despesasfixas.DespesaFixa;
-import domain.despesavariavel.DespesaVariavel;
-import domain.receita.Receita;
+import com.api.financas.domain.despesasfixas.DespesaFixa;
+import com.api.financas.domain.despesavariavel.DespesaVariavel;
+import com.api.financas.domain.receita.Receita;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

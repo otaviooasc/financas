@@ -1,12 +1,13 @@
-package domain.despesasfixas;
+package com.api.financas.domain.receita;
 
-import domain.usuario.Usuario;
+import com.api.financas.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -14,16 +15,22 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "despesas-fixas")
-public class DespesaFixa {
+@Table(name = "receita")
+public class Receita {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    private String nome;
+    private LocalDate data;
 
-    private String valor;
+    private Double saldoLiquido;
+
+    private Double rendimentoAluguel;
+
+    private Double rendimentoAplicacoes;
+
+    private Double outros;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
