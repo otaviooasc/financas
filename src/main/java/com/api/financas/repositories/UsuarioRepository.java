@@ -1,7 +1,7 @@
-package repositories;
+package com.api.financas.repositories;
 
 
-import domain.usuario.Usuario;
+import com.api.financas.domain.usuario.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
