@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ReceitaRespository extends JpaRepository<Receita, UUID> {
-    Optional<Receita> findByData(LocalDate data);
-
     List<Receita> findByUsuarioId(UUID id);
+
+    Optional<Receita> findByUsuarioIdAndData(UUID id, LocalDate data);
 }
