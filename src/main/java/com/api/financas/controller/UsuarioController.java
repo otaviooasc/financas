@@ -14,43 +14,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.repositories.UsuarioRepository;
+import com.api.financas.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioService usuarioService;
 
     @GetMapping
     public List<Usuario> listarTodosUsuarios() {
-        return usuarioRepository.findAll();
+        return usuarioService.listarTodosUsuarios();
     }
 
     @PostMapping
     public Usuario criarUsuario(@RequestBody Usuario usuario){
-        return usuarioRepository.save(usuario);
+        return usuarioService.criaUsuario(usuario);
     }
 
     @GetMapping("/{id}")
     public Usuario listarUsuarioPorId(@PathVariable UUID id){
-        return usuarioRepository.findById(id).orElse(null);
+        return usuarioService.listarUsuarioPorId(id);
     }
 
     @PutMapping("/{id}")
     public Usuario alterarUsuario(@PathVariable UUID id, @RequestBody Usuario usuarioDetails){
-        Usuario usuario = usuarioRepository.findById(id).orElse(null);
-        if (usuario != null) {
-            usuario.setNome(usuarioDetails.getNome());
-            return usuarioRepository.save(usuario);
-        }
-        return null;
+        return usuarioService.alterarUsuario(id, usuarioDetails);
     }
 
     @DeleteMapping("/{id}")
     public void deletarUsuario(@PathVariable UUID id){
-        usuarioRepository.deleteById(id);
+        usuarioService.deletarUsuario(id);
     }
 
 }
