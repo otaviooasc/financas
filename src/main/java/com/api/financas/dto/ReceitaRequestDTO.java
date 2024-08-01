@@ -5,10 +5,10 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
-public record ReceitaDTO(@NotNull LocalDate data, @NotNull Double saldoLiquido, @NotNull Double rendimentoAluguel,
-                         @NotNull Double rendimentoAplicacoes,
-                         @NotNull Double outros) {
-    public ReceitaDTO(Receita receita) {
+public record ReceitaRequestDTO(@NotNull LocalDate data, @NotNull Double saldoLiquido, @NotNull Double rendimentoAluguel,
+                                @NotNull Double rendimentoAplicacoes,
+                                @NotNull Double outros) {
+    public ReceitaRequestDTO(Receita receita) {
         this(receita.getData(),
                 receita.getSaldoLiquido(),
                 receita.getRendimentoAluguel(),
