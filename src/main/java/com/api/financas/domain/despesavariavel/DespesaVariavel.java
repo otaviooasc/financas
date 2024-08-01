@@ -29,6 +29,6 @@ public class DespesaVariavel {
     private LocalDate data;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 }
