@@ -7,7 +7,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -20,7 +19,7 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid  ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> salvar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
         try {
             return ResponseEntity.ok().body(receitaService.criar(id, receitaRequestDTO));
         } catch (Exception e) {
@@ -29,7 +28,7 @@ public class ReceitaController {
     }
 
     @PostMapping("/alterar/{id}")
-    public ResponseEntity<Object> alterar(@PathVariable String id, @RequestBody @Valid ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> alterar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
         try {
             return ResponseEntity.ok().body(receitaService.alterar(id, receitaRequestDTO));
         } catch (Exception e) {
