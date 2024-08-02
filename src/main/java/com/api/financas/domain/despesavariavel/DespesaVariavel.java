@@ -15,7 +15,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "despesas-variavel")
+@Table(name = "despesa_variavel")
 public class DespesaVariavel {
 
     @Id
@@ -24,7 +24,7 @@ public class DespesaVariavel {
 
     private String nome;
 
-    private String valor;
+    private Double valor;
 
     private LocalDate data;
 
