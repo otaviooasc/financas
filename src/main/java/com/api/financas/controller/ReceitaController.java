@@ -3,6 +3,7 @@ package com.api.financas.controller;
 import com.api.financas.dto.ReceitaRequestDTO;
 import com.api.financas.exceptions.ReceitaException;
 import com.api.financas.service.ReceitaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Validated ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid  ReceitaRequestDTO receitaRequestDTO) {
         try {
             return ResponseEntity.ok().body(receitaService.criar(id, receitaRequestDTO));
         } catch (Exception e) {
@@ -28,7 +29,7 @@ public class ReceitaController {
     }
 
     @PostMapping("/alterar/{id}")
-    public ResponseEntity<Object> alterar(@PathVariable String id, @RequestBody @Validated ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> alterar(@PathVariable String id, @RequestBody @Valid ReceitaRequestDTO receitaRequestDTO) {
         try {
             return ResponseEntity.ok().body(receitaService.alterar(id, receitaRequestDTO));
         } catch (Exception e) {
