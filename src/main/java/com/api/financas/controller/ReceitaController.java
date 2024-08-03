@@ -1,7 +1,7 @@
 package com.api.financas.controller;
 
 import com.api.financas.dto.ReceitaRequestDTO;
-import com.api.financas.exceptions.ReceitaException;
+import com.api.financas.exceptions.GenericaException;
 import com.api.financas.service.ReceitaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,13 +43,13 @@ public class ReceitaController {
 
     @GetMapping("/listar-por-data/id/{id}/data/{data}")
     public ResponseEntity<Object> listarPorData(@PathVariable String id, @PathVariable LocalDate data)
-            throws ReceitaException {
+            throws GenericaException {
         return ResponseEntity.ok().body(receitaService.listarPorData(id, data));
     }
 
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws ReceitaException {
-        receitaService.deletarReceita(id);
+    public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws GenericaException {
+        receitaService.deletar(id);
         return ResponseEntity.noContent().build();
     }
 }
