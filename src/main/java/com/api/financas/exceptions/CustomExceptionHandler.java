@@ -23,8 +23,8 @@ public class CustomExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(ReceitaException.class)
-    public ResponseEntity<Object> handleReceitaException(ReceitaException ex, WebRequest request) {
+    @ExceptionHandler(GenericaException.class)
+    public ResponseEntity<Object> handleReceitaException(GenericaException ex, WebRequest request) {
         Map<String, Object> body = new HashMap<>();
         body.put("timestamp", LocalDateTime.now());
         body.put("status", HttpStatus.NOT_FOUND.value());
