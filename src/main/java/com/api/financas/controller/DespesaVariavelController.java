@@ -1,8 +1,8 @@
 package com.api.financas.controller;
 
-import com.api.financas.dto.DespesaFixaRequestDTO;
+import com.api.financas.dto.DespesaVariavelRequestDTO;
 import com.api.financas.exceptions.GenericaException;
-import com.api.financas.service.DespesaFixaService;
+import com.api.financas.service.DespesaVariavelService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,25 +12,25 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/api/despesa-fixa")
-public class DespesaFixaController {
+@RequestMapping("/api/despesa-variavel")
+public class DespesaVariavelController {
 
     @Autowired
-    private DespesaFixaService service;
+    private DespesaVariavelService service;
 
     @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid DespesaFixaRequestDTO despesaFixaRequestDTO) {
+    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid DespesaVariavelRequestDTO despesaVariavelRequestDTO) {
         try {
-            return ResponseEntity.ok().body(service.criar(id, despesaFixaRequestDTO));
+            return ResponseEntity.ok().body(service.criar(id, despesaVariavelRequestDTO));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PostMapping("/alterar/{id}")
-    public ResponseEntity<Object> alterar(@PathVariable String id, @Valid @RequestBody DespesaFixaRequestDTO despesaFixaRequestDTO) {
+    public ResponseEntity<Object> alterar(@PathVariable String id, @Valid @RequestBody DespesaVariavelRequestDTO despesaVariavelRequestDTO) {
         try {
-            return ResponseEntity.ok().body(service.alterar(id, despesaFixaRequestDTO));
+            return ResponseEntity.ok().body(service.alterar(id, despesaVariavelRequestDTO));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
