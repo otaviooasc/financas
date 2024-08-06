@@ -11,6 +11,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -33,12 +34,12 @@ public class Usuario {
 
     private LocalDate primeiroAcesso;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private ArrayList<Receita> receitas;
+    /*@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Receita> receitas = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private ArrayList<DespesaFixa> despesasFixas;
+    private List<DespesaFixa> despesasFixas = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private ArrayList<DespesaVariavel> despesaVariaveis;
+    private List<DespesaVariavel> despesaVariaveis = new ArrayList<>();*/
 }

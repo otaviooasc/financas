@@ -1,6 +1,7 @@
 package com.api.financas.domain.despesavariavel;
 
 import com.api.financas.domain.usuario.Usuario;
+import com.api.financas.dto.DespesaVariavelRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "despesas-variavel")
+@Table(name = "despesa_variavel")
 public class DespesaVariavel {
 
     @Id
@@ -24,11 +25,17 @@ public class DespesaVariavel {
 
     private String nome;
 
-    private String valor;
+    private Double valor;
 
     private LocalDate data;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
+
+    public DespesaVariavel(DespesaVariavelRequestDTO dto) {
+        this.nome = dto.nome();
+        this.valor = dto.valor();
+        this.data = dto.data();
+    }
 }

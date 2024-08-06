@@ -1,8 +1,8 @@
 package com.api.financas.controller;
 
-import com.api.financas.dto.ReceitaRequestDTO;
+import com.api.financas.dto.DespesaFixaRequestDTO;
 import com.api.financas.exceptions.GenericaException;
-import com.api.financas.service.ReceitaService;
+import com.api.financas.service.DespesaFixaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,44 +12,44 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/api/receita")
-public class ReceitaController {
+@RequestMapping("/api/despesa-fixa")
+public class DespesaFixaController {
 
     @Autowired
-    private ReceitaService receitaService;
+    private DespesaFixaService service;
 
     @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid DespesaFixaRequestDTO despesaFixaRequestDTO) {
         try {
-            return ResponseEntity.ok().body(receitaService.criar(id, receitaRequestDTO));
+            return ResponseEntity.ok().body(service.criar(id, despesaFixaRequestDTO));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PostMapping("/alterar/{id}")
-    public ResponseEntity<Object> alterar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
+    public ResponseEntity<Object> alterar(@PathVariable String id, @Valid @RequestBody DespesaFixaRequestDTO despesaFixaRequestDTO) {
         try {
-            return ResponseEntity.ok().body(receitaService.alterar(id, receitaRequestDTO));
+            return ResponseEntity.ok().body(service.alterar(id, despesaFixaRequestDTO));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @GetMapping("/listar/{id}")
-    public ResponseEntity<Object> listarTodos(@PathVariable String id) {
-        return ResponseEntity.ok().body(receitaService.listarTodos(id));
+    public ResponseEntity<Object> listarTodos(@PathVariable String id) throws GenericaException {
+        return ResponseEntity.ok().body(service.listarTodos(id));
     }
 
     @GetMapping("/listar-por-data/id/{id}/data/{data}")
     public ResponseEntity<Object> listarPorData(@PathVariable String id, @PathVariable LocalDate data)
             throws GenericaException {
-        return ResponseEntity.ok().body(receitaService.listarPorData(id, data));
+        return ResponseEntity.ok().body(service.listarPorData(id, data));
     }
 
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws GenericaException {
-        receitaService.deletar(id);
+    public ResponseEntity<Void> deletar(@PathVariable String id) throws GenericaException {
+        service.deletar(id);
         return ResponseEntity.noContent().build();
     }
 }

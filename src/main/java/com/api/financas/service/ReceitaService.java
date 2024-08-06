@@ -2,11 +2,11 @@ package com.api.financas.service;
 
 import com.api.financas.domain.receita.Receita;
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.ReceitaDTO;
-import com.api.financas.exceptions.ReceitaException;
+import com.api.financas.dto.ReceitaRequestDTO;
+import com.api.financas.dto.ReceitaResponseDTO;
+import com.api.financas.exceptions.GenericaException;
 import com.api.financas.repositories.ReceitaRespository;
 import com.api.financas.repositories.UsuarioRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,49 +24,56 @@ public class ReceitaService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public Receita criar(String id, ReceitaDTO receitaDTO) throws ReceitaException {
-        var receita = new Receita();
+    public Receita criar(String id, ReceitaRequestDTO receitaRequestDTO) throws GenericaException {
+        var receita = new Receita(receitaRequestDTO);
         var usuario = new Usuario();
 
         usuario = usuarioRepository.findById(UUID.fromString(id))
-                .orElseThrow(() -> new ReceitaException("Nenhum usuário encontrado com esse id: " + id));
+                .orElseThrow(() -> new GenericaException("Nenhum usuário encontrado com esse id: " + id));
 
-        BeanUtils.copyProperties(receitaDTO, receita);
         receita.setUsuario(usuario);
         repository.save(receita);
         return receita;
     }
 
-    public Receita alterar(String idReceita, ReceitaDTO receitaDTO) throws ReceitaException {
+    public Receita alterar(String id, ReceitaRequestDTO receitaRequestDTO) throws GenericaException {
+        UUID receitaId = UUID.fromString(id);
         var receita = new Receita();
 
-        receita = repository.findById(UUID.fromString(idReceita))
-                .orElseThrow(() -> new ReceitaException("Nenhum usuário encontrado com esse id: " + idReceita));
+        receita = repository.findById(receitaId)
+                .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + receitaId));
 
-        BeanUtils.copyProperties(receitaDTO, receita);
+        receita.setData(receitaRequestDTO.data());
+        receita.setSaldoLiquido(receitaRequestDTO.saldoLiquido());
+        receita.setRendimentoAluguel(receitaRequestDTO.rendimentoAluguel());
+        receita.setRendimentoAplicacoes(receitaRequestDTO.rendimentoAplicacoes());
+        receita.setOutros(receitaRequestDTO.outros());
         repository.save(receita);
         return receita;
     }
 
-    public List<ReceitaDTO> listarTodos(String id) {
-        List<Receita> receitaList = repository.findByUsuarioId(UUID.fromString(id));
+    public List<ReceitaResponseDTO> listarTodos(String id) {
+        UUID usuarioId = UUID.fromString(id);
+        List<Receita> receitaList = repository.findByUsuarioId(usuarioId);
 
         if (receitaList.isEmpty()) {
             throw new RuntimeException("Nenhum usuário encontrado com esse id: " + id);
         }
 
         return receitaList.stream()
-                .map(ReceitaDTO::new)
+                .map(ReceitaResponseDTO::new)
                 .collect(Collectors.toList());
     }
 
-    public ReceitaDTO listarPorData(String id, LocalDate data) throws ReceitaException {
+    public ReceitaResponseDTO listarPorData(String id, LocalDate data) throws GenericaException {
         Receita receita = repository.findByUsuarioIdAndData(UUID.fromString(id), data)
-                .orElseThrow(() -> new ReceitaException("Nenhuma receita foi encontrada nessa data: " + data));
-        return new ReceitaDTO(receita);
+                .orElseThrow(() -> new GenericaException("Nenhuma receita foi encontrada nessa data: " + data));
+        return new ReceitaResponseDTO(receita);
     }
 
-    public void deletarReceita(String idReceita) {
+    public void deletar(String idReceita) throws GenericaException {
+        var receita = repository.findById(UUID.fromString(idReceita))
+                .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + idReceita));
         repository.deleteById(UUID.fromString(idReceita));
     }
 }

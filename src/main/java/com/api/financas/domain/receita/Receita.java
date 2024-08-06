@@ -1,6 +1,7 @@
 package com.api.financas.domain.receita;
 
 import com.api.financas.domain.usuario.Usuario;
+import com.api.financas.dto.ReceitaRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,6 +34,14 @@ public class Receita {
     private Double outros;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
+
+    public Receita(ReceitaRequestDTO receitaRequestDTO) {
+        this.data = receitaRequestDTO.data();
+        this.saldoLiquido = receitaRequestDTO.saldoLiquido();
+        this.rendimentoAluguel = receitaRequestDTO.rendimentoAluguel();
+        this.rendimentoAplicacoes = receitaRequestDTO.rendimentoAplicacoes();
+        this.outros = receitaRequestDTO.outros();
+    }
 }
