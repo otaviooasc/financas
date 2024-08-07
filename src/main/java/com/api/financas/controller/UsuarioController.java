@@ -1,20 +1,13 @@
 package com.api.financas.controller;
 
-import java.util.List;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.api.financas.domain.usuario.Usuario;
+import com.api.financas.exceptions.GenericaException;
 import com.api.financas.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/usuario")
@@ -23,29 +16,30 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping
-    public List<Usuario> listarTodosUsuarios() {
-        return usuarioService.listarTodosUsuarios();
+    @GetMapping("/listar")
+    public ResponseEntity<Object> listarTodosUsuarios() {
+        return ResponseEntity.ok().body(usuarioService.listarTodos());
     }
 
-    @PostMapping
-    public Usuario criarUsuario(@RequestBody Usuario usuario){
-        return usuarioService.criaUsuario(usuario);
+    @PostMapping("/criar")
+    public ResponseEntity<Object> criarUsuario(@RequestBody Usuario usuario) {
+        return ResponseEntity.ok().body(usuarioService.criar(usuario));
     }
 
-    @GetMapping("/{id}")
-    public Usuario listarUsuarioPorId(@PathVariable UUID id){
-        return usuarioService.listarUsuarioPorId(id);
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<Object> listarUsuarioPorId(@PathVariable UUID id) {
+        return ResponseEntity.ok().body(usuarioService.listarPorId(id));
     }
 
-    @PutMapping("/{id}")
-    public Usuario alterarUsuario(@PathVariable UUID id, @RequestBody Usuario usuarioDetails){
-        return usuarioService.alterarUsuario(id, usuarioDetails);
+    @PutMapping("/alterar/{id}")
+    public ResponseEntity<Object> alterarUsuario(@PathVariable UUID id, @RequestBody Usuario usuarioDetails) throws GenericaException {
+        return ResponseEntity.ok().body(usuarioService.alterar(id, usuarioDetails));
     }
 
-    @DeleteMapping("/{id}")
-    public void deletarUsuario(@PathVariable UUID id){
-        usuarioService.deletarUsuario(id);
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<Object> deletarUsuario(@PathVariable UUID id) throws GenericaException {
+        usuarioService.deletar(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

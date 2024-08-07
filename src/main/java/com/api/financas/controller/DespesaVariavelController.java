@@ -18,8 +18,8 @@ public class DespesaVariavelController {
     @Autowired
     private DespesaVariavelService service;
 
-    @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @RequestBody @Valid DespesaVariavelRequestDTO despesaVariavelRequestDTO) {
+    @PostMapping("/criar/{id}")
+    public ResponseEntity<Object> criar(@PathVariable String id, @RequestBody @Valid DespesaVariavelRequestDTO despesaVariavelRequestDTO) {
         try {
             return ResponseEntity.ok().body(service.criar(id, despesaVariavelRequestDTO));
         } catch (Exception e) {
