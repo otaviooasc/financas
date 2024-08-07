@@ -18,8 +18,8 @@ public class ReceitaController {
     @Autowired
     private ReceitaService receitaService;
 
-    @PostMapping("/salvar/{id}")
-    public ResponseEntity<Object> salvar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
+    @PostMapping("/criar/{id}")
+    public ResponseEntity<Object> criar(@PathVariable String id, @Valid @RequestBody ReceitaRequestDTO receitaRequestDTO) {
         try {
             return ResponseEntity.ok().body(receitaService.criar(id, receitaRequestDTO));
         } catch (Exception e) {
