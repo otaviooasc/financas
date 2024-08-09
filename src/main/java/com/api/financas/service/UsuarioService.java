@@ -26,8 +26,9 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario listarPorId(UUID id) {
-        return usuarioRepository.findById(id).orElse(null);
+    public Usuario listarPorId(UUID id) throws GenericaException {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new GenericaException("Nenhum usuario encontrado com esse id: " + id));
     }
 
     public Usuario alterar(UUID id, Usuario usuarioDetails) throws GenericaException {

@@ -27,7 +27,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/listar/{id}")
-    public ResponseEntity<Object> listarUsuarioPorId(@PathVariable UUID id) {
+    public ResponseEntity<Object> listarUsuarioPorId(@PathVariable UUID id) throws GenericaException {
         return ResponseEntity.ok().body(usuarioService.listarPorId(id));
     }
 
