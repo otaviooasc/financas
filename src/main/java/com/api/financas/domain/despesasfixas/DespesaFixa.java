@@ -1,7 +1,7 @@
 package com.api.financas.domain.despesasfixas;
 
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.DespesaFixaRequestDTO;
+import com.api.financas.dto.despesafixa.DespesaFixaRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

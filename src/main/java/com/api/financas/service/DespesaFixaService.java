@@ -2,8 +2,8 @@ package com.api.financas.service;
 
 import com.api.financas.domain.despesasfixas.DespesaFixa;
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.DespesaFixaRequestDTO;
-import com.api.financas.dto.DespesaFixaResponseDTO;
+import com.api.financas.dto.despesafixa.DespesaFixaRequestDTO;
+import com.api.financas.dto.despesafixa.DespesaFixaResponseDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.repositories.DespesaFixaRepository;
 import com.api.financas.repositories.UsuarioRepository;

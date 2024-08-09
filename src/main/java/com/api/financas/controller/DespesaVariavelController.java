@@ -1,6 +1,6 @@
 package com.api.financas.controller;
 
-import com.api.financas.dto.DespesaVariavelRequestDTO;
+import com.api.financas.dto.despesavariavel.DespesaVariavelRequestDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.service.DespesaVariavelService;
 import jakarta.validation.Valid;

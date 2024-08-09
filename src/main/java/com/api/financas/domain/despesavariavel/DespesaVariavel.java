@@ -1,7 +1,7 @@
 package com.api.financas.domain.despesavariavel;
 
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.DespesaVariavelRequestDTO;
+import com.api.financas.dto.despesavariavel.DespesaVariavelRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.api.financas.controller;
 
-import com.api.financas.dto.ReceitaRequestDTO;
+import com.api.financas.dto.receita.ReceitaRequestDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.service.ReceitaService;
 import jakarta.validation.Valid;

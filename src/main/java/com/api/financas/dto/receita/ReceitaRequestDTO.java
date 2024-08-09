@@ -1,4 +1,4 @@
-package com.api.financas.dto;
+package com.api.financas.dto.receita;
 
 import jakarta.validation.constraints.NotNull;
 
