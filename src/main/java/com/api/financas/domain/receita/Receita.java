@@ -1,7 +1,7 @@
 package com.api.financas.domain.receita;
 
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.ReceitaRequestDTO;
+import com.api.financas.dto.receita.ReceitaRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

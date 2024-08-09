@@ -2,8 +2,8 @@ package com.api.financas.service;
 
 import com.api.financas.domain.despesavariavel.DespesaVariavel;
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.DespesaVariavelRequestDTO;
-import com.api.financas.dto.DespesaVariavelResponseDTO;
+import com.api.financas.dto.despesavariavel.DespesaVariavelRequestDTO;
+import com.api.financas.dto.despesavariavel.DespesaVariavelResponseDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.repositories.DespesaVariavelRepository;
 import com.api.financas.repositories.UsuarioRepository;

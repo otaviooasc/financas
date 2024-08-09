@@ -1,4 +1,4 @@
-package com.api.financas.dto;
+package com.api.financas.dto.despesafixa;
 
 import com.api.financas.domain.despesasfixas.DespesaFixa;
 import jakarta.validation.constraints.NotNull;

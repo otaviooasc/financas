@@ -2,8 +2,8 @@ package com.api.financas.service;
 
 import com.api.financas.domain.receita.Receita;
 import com.api.financas.domain.usuario.Usuario;
-import com.api.financas.dto.ReceitaRequestDTO;
-import com.api.financas.dto.ReceitaResponseDTO;
+import com.api.financas.dto.receita.ReceitaRequestDTO;
+import com.api.financas.dto.receita.ReceitaResponseDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.repositories.ReceitaRespository;
 import com.api.financas.repositories.UsuarioRepository;

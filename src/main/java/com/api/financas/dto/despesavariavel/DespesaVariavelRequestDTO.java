@@ -1,4 +1,4 @@
-package com.api.financas.dto;
+package com.api.financas.dto.despesavariavel;
 
 import jakarta.validation.constraints.NotNull;
 
