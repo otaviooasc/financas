@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4305e2b9-bcdf-4bcc-ab71-a32363d88080" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/financas-frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financas-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/financas-frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financas-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/financas-frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financas-frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/financas-frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financas-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/financas-frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/FinancasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/FinancasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/controller/DespesaFixaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/controller/DespesaFixaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/controller/DespesaVariavelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/controller/DespesaVariavelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/controller/ReceitaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/controller/ReceitaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/domain/despesasfixas/DespesaFixa.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/domain/despesasfixas/DespesaFixa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/domain/despesavariavel/DespesaVariavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/domain/despesavariavel/DespesaVariavel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/domain/receita/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/domain/receita/Receita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/domain/usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/domain/usuario/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/despesafixa/DespesaFixaRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/despesafixa/DespesaFixaRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/despesafixa/DespesaFixaResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/despesafixa/DespesaFixaResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/despesavariavel/DespesaVariavelRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/despesavariavel/DespesaVariavelRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/despesavariavel/DespesaVariavelResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/despesavariavel/DespesaVariavelResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/receita/ReceitaRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/receita/ReceitaRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/receita/ReceitaResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/receita/ReceitaResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/user/AuthenticationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/user/AuthenticationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/user/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/user/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/dto/user/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/dto/user/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/exceptions/CustomExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/exceptions/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/exceptions/GenericaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/exceptions/GenericaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/infra/security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/infra/security/SecurityConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/infra/security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/infra/security/SecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/infra/security/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/infra/security/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/repositories/DespesaFixaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/repositories/DespesaFixaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/repositories/DespesaVariavelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/repositories/DespesaVariavelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/repositories/ReceitaRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/repositories/ReceitaRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/repositories/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/service/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/service/AuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/service/DespesaFixaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/service/DespesaFixaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/service/DespesaVariavelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/service/DespesaVariavelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/service/ReceitaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/service/ReceitaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/financas/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/main/java/com/api/financas/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/api/financas/FinancasApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/financas-backend/src/test/java/com/api/financas/FinancasApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2ka7khqTe3xIa3ruWk3rkV6lGKt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4305e2b9-bcdf-4bcc-ab71-a32363d88080" name="Changes" comment="" />
+      <created>1723509981820</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723509981820</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
