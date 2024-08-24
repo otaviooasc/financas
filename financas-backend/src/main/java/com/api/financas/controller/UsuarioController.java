@@ -31,6 +31,11 @@ public class UsuarioController {
         return ResponseEntity.ok().body(usuarioService.listarPorId(id));
     }
 
+    @GetMapping("/listar/email/{email}")
+    public ResponseEntity<Object> listarUsuarioPorEmail(@PathVariable String email) throws GenericaException {
+        return ResponseEntity.ok().body(usuarioService.listarPorEmail(email));
+    }
+
     @PutMapping("/alterar/{id}")
     public ResponseEntity<Object> alterarUsuario(@PathVariable UUID id, @RequestBody Usuario usuarioDetails) throws GenericaException {
         return ResponseEntity.ok().body(usuarioService.alterar(id, usuarioDetails));

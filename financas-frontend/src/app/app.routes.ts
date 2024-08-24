@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ReceitaComponent } from './components/receita/receita.component';
+import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 
 export const routes: Routes = [
   {
@@ -15,5 +17,21 @@ export const routes: Routes = [
   {
     path: "menu",
     component: MenuComponent
+  },
+  {
+    path: "receita",
+    component: ReceitaComponent
+  },
+  {
+    path: "despesa-fixa",
+    component: ReceitaComponent
+  },
+  {
+    path: "despesa-variavel",
+    component: ReceitaComponent
+  },
+  {
+    path: "item-menu",
+    component: ItemMenuComponent
   }
 ];

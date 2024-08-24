@@ -1,6 +1,7 @@
 package com.api.financas.service;
 
 import com.api.financas.domain.usuario.Usuario;
+import com.api.financas.dto.user.UsuarioLoginDTO;
 import com.api.financas.exceptions.GenericaException;
 import com.api.financas.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,10 @@ public class UsuarioService {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new GenericaException("Nenhum usuario encontrado com esse id: " + id));
         usuarioRepository.deleteById(id);
+    }
+
+    public Object listarPorEmail(String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        return new UsuarioLoginDTO(usuario.getId() + "", usuario.getNome(), usuario.getEmail());
     }
 }

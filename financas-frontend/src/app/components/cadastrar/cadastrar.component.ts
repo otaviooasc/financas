@@ -35,9 +35,7 @@ export class CadastrarComponent {
   }
 
   onSubmit() {
-    console.log(this.cadastrarForm.value);
     if (this.cadastrarForm.valid) {
-      // Lógica de autenticação aqui
       this.loginService
         .cadastrar(
           this.cadastrarForm.value.username,
@@ -46,12 +44,10 @@ export class CadastrarComponent {
         )
         .subscribe({
           next: () => {
-            // Exibir mensagem de sucesso
             this.toastr.success('Usuário registrado com sucesso!');
             this.router.navigate(['']);
           },
           error: (err) => {
-            // Exibir mensagem de erro
             this.toastr.error('Erro ao registrar usuário!');
           },
         });
@@ -64,5 +60,9 @@ export class CadastrarComponent {
       'password'
     ) as HTMLInputElement;
     passwordField.type = this.isPasswordVisible ? 'text' : 'password';
+  }
+
+  voltarInicio():void {
+    this.router.navigate(['']);
   }
 }

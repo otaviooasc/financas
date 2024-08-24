@@ -1,6 +1,6 @@
 import {
   DOCUMENT
-} from "./chunk-SRYSEWB3.js";
+} from "./chunk-YZLHI4I7.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -479,4 +479,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-2GQU7OKO.js.map
+//# sourceMappingURL=chunk-HAGJJ7S4.js.map
