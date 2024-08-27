@@ -54,7 +54,7 @@ public class ReceitaService {
 
     public List<ReceitaResponseDTO> listarTodos(String id) {
         UUID usuarioId = UUID.fromString(id);
-        List<Receita> receitaList = repository.findByUsuarioId(usuarioId);
+        List<Receita> receitaList = repository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         if (receitaList.isEmpty()) {
             throw new RuntimeException("Nenhum usuário encontrado com esse id: " + id);
@@ -76,4 +76,10 @@ public class ReceitaService {
                 .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + idReceita));
         repository.deleteById(UUID.fromString(idReceita));
     }
+
+    public ReceitaResponseDTO ListarPorId(String id) throws GenericaException {
+        return new ReceitaResponseDTO(repository.findById(UUID.fromString(id))
+                .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + id)));
+    }
+
 }

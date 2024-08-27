@@ -46,5 +46,4 @@ public class UsuarioController {
         usuarioService.deletar(id);
         return ResponseEntity.noContent().build();
     }
-
 }

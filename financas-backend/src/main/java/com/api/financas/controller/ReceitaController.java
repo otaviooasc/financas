@@ -47,6 +47,11 @@ public class ReceitaController {
         return ResponseEntity.ok().body(receitaService.listarPorData(id, data));
     }
 
+    @GetMapping("/listar-por-receita/{id}")
+    public ResponseEntity<Object> listarPorId(@PathVariable String id) throws GenericaException {
+        return ResponseEntity.ok().body(receitaService.ListarPorId(id));
+    }
+
     @DeleteMapping("/deletar/{id}")
     public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws GenericaException {
         receitaService.deletar(id);

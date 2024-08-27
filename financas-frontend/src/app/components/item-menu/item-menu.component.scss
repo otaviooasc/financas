@@ -5,26 +5,33 @@
 }
 
 .div-main {
-  width: 100vw;
+  width: 90vw;
   height: 80px;
   flex-direction: row;
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .div-botao {
-  width: 90vw;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background: linear-gradient(rgb(242, 248, 252), rgb(149, 160, 179));
   border-radius: 10px;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .div-img {
-  width: 30vw;
+  width: 100px;
   height: 70px;
   margin-left: 5px;
   border-radius: 10px;
@@ -32,7 +39,9 @@
 }
 
 .div-text {
-  width: 40vw;
+  width: 35vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: 10px;
 }
 
 .div-icons {
@@ -62,4 +71,3 @@
 .div-icon:hover {
   background-color: rgb(206, 206, 207);
 }
-

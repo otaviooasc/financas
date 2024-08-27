@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { Receita } from '../models/receita-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,21 @@ export class ReceitaService {
     let usuario = JSON.parse(usuarioSessionStorage!);
 
     const url = `http://localhost:8080/api/receita/listar/${usuario.id}`;
-    return this.httpClient.get<any>(url, {headers})
+    return this.httpClient.get<Receita[]>(url, {headers})
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  listarPorIdReceita(id: String) {
+    const token = sessionStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    const url = `http://localhost:8080/api/receita/listar-por-receita/${id}`;
+    return this.httpClient.get<Receita>(url, {headers})
     .pipe(
       catchError(this.handleError)
     );

@@ -8,9 +8,9 @@
 }
 
 .container {
-  width: 70vw;
-  height: 300px;
-  background: linear-gradient(rgb(116, 116, 116), rgb(46, 46, 46));
+  width: 90vw;
+  height: 80%;
+  background: linear-gradient(rgb(169, 232, 248), rgb(132, 136, 136));
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -31,4 +31,13 @@
   margin: 16px;
   display: flex;
   justify-content: center;
+}
+
+.receitas {
+  max-height: 500px; /* Defina a altura máxima desejada */
+  overflow-y: auto;  /* Adiciona uma barra de rolagem vertical se necessário */
+}
+
+.receitas::-webkit-scrollbar {
+  display: none;
 }
