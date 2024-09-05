@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Receita } from '../../models/receita-response.model';
 import { Router, RouterModule } from '@angular/router';
 import { ReceitaService } from '../../services/receita.service';
@@ -13,6 +13,7 @@ import { ReceitaService } from '../../services/receita.service';
 })
 export class ItemMenuComponent {
   @Input() receita!: Receita;
+  @Output() deleteItem = new EventEmitter<Receita>();
 
   private receitaResponse!: Receita;
 
@@ -22,8 +23,11 @@ export class ItemMenuComponent {
     this.receitaService.listarPorIdReceita(id).subscribe(
       (data) => {
         this.receitaResponse = data;
-        console.log(this.receitaResponse);
       }
     )
+  }
+
+  onDelete(receita: Receita) {
+    this.deleteItem.emit(receita);
   }
 }

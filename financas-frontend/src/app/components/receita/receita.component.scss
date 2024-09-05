@@ -41,3 +41,45 @@
 .receitas::-webkit-scrollbar {
   display: none;
 }
+
+.meu-componente {
+  position: fixed;
+  bottom: 20px; /* Ajuste conforme necessário */
+  right: 20px; /* Ajuste conforme necessário */
+  width: 50px; /* Ajuste conforme necessário */
+  height: 50px; /* Ajuste conforme necessário */
+  background-color: #007bff; /* Cor de fundo */
+  border-radius: 50%; /* Torna o componente redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Cor do símbolo + */
+  font-size: 24px; /* Tamanho do símbolo + */
+  cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+.item-voltar {
+  position: fixed;
+  top: 80px;
+  left: 35px;
+  width: 50px;
+  height: 50px;
+  background-color: #4e97e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.meu-componente .plus {
+  margin: 0;
+}
+
+.item-voltar .voltar {
+  margin: 0;
+}

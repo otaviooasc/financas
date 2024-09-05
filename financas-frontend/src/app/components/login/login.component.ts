@@ -28,6 +28,8 @@ export class LoginComponent {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
+
+    this.toastr.toastrConfig.timeOut = 800;
   }
 
   onSubmit() {

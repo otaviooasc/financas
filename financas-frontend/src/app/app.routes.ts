@@ -4,6 +4,7 @@ import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ReceitaComponent } from './components/receita/receita.component';
 import { ItemMenuComponent } from './components/item-menu/item-menu.component';
+import { AdicionarItemComponent } from './components/adicionar-item/adicionar-item.component';
 
 export const routes: Routes = [
   {
@@ -33,5 +34,9 @@ export const routes: Routes = [
   {
     path: "item-menu",
     component: ItemMenuComponent
+  },
+  {
+    path: "receita/adicionar-item",
+    component: AdicionarItemComponent
   }
 ];

@@ -39,6 +39,6 @@ export class LoginService {
   }
 
   private handleError(error: any): Observable<never> {
-    return throwError(() => new Error('Algo deu errado; por favor, tente novamente mais tarde.'));
+    return throwError(() => error);
   }
 }

@@ -7,6 +7,7 @@ import { Receita } from '../models/receita-response.model';
   providedIn: 'root'
 })
 export class ReceitaService {
+  private apiUrl = 'http://localhost:8080/api/receita';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +21,7 @@ export class ReceitaService {
 
     let usuario = JSON.parse(usuarioSessionStorage!);
 
-    const url = `http://localhost:8080/api/receita/listar/${usuario.id}`;
+    const url = `${this.apiUrl}/listar/${usuario.id}`;
     return this.httpClient.get<Receita[]>(url, {headers})
     .pipe(
       catchError(this.handleError)
@@ -34,14 +35,44 @@ export class ReceitaService {
       'Authorization': `Bearer ${token}`
     });
 
-    const url = `http://localhost:8080/api/receita/listar-por-receita/${id}`;
+    const url = `${this.apiUrl}/listar-por-receita/${id}`;
     return this.httpClient.get<Receita>(url, {headers})
     .pipe(
       catchError(this.handleError)
     );
   }
 
+  cadastrarReceita(receita: Receita) {
+    const token = sessionStorage.getItem('token');
+    const usuarioSessionStorage = sessionStorage.getItem('usuario');
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    let usuario = JSON.parse(usuarioSessionStorage!);
+
+    const url = `${this.apiUrl}/criar/${usuario.id}`;
+    return this.httpClient.post(url, receita, {headers})
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  delete(receita: Receita){
+    const token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    const url = `${this.apiUrl}/deletar/${receita.id}`;
+    return this.httpClient.delete(url, {headers})
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(error: any): Observable<never> {
-    return throwError(() => new Error('Algo deu errado; por favor, tente novamente mais tarde.'));
+    return throwError(() => error);
   }
 }
