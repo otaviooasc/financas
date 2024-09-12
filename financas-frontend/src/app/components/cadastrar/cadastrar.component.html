@@ -3,15 +3,38 @@
     <div class="logo-login">
       <h1 class="back-login">Cadastrar</h1>
     </div>
-    <form class="form-login" [formGroup]="cadastrarForm" (ngSubmit)="onSubmit()">
-      <input id="username" formControlName="username" type="text" placeholder="Nome de usuário">
+    <form
+      class="form-login"
+      [formGroup]="cadastrarForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="input-user">
+        <input
+          id="username"
+          formControlName="username"
+          type="text"
+          placeholder="Nome"
+        />
+      </div>
 
-      <input id="email" formControlName="email" type="email" placeholder="Email" minlength="5">
+      <div class="input-email">
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="Email"
+          minlength="5"
+        />
+      </div>
 
       <div class="password-container">
-        <input id="password" formControlName="password"
-               [type]="isPasswordVisible ? 'text' : 'password'"
-               placeholder="Senha" minlength="5">
+        <input
+          id="password"
+          formControlName="password"
+          [type]="isPasswordVisible ? 'text' : 'password'"
+          placeholder="Senha"
+          minlength="5"
+        />
         <span class="toggle-password" (click)="togglePasswordVisibility()">
           <i [class]="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
         </span>
@@ -19,7 +42,7 @@
 
       <div class="buttom-div">
         <button class="botao" type="submit">Confirmar</button>
-        <button class="botao">Cancelar</button>
+        <button class="botao" (click)="voltarInicio()">Cancelar</button>
       </div>
     </form>
   </div>

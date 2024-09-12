@@ -1,0 +1,19 @@
+<div class="div-main">
+  <div class="div-botao" (click)="detalhesReceita(receita.id)">
+    <div class="container">
+      <div class="div-text">
+        <h3>{{ receita.data }}</h3>
+        <h4>Valor liquido: R$ {{ receita.saldoLiquido }}</h4>
+      </div>
+    </div>
+
+    <div class="div-icons">
+      <div class="div-icon" (click)="onDelete(receita)">
+        <a class="fa-solid fa-xmark" style="color: #ff0000"></a>
+      </div>
+      <div class="div-icon" (click)="onEditarItem(receita)">
+        <i class="fa-solid fa-pen" style="color: #005eff"></i>
+      </div>
+    </div>
+  </div>
+</div>

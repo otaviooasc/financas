@@ -4,19 +4,32 @@
       <h1 class="back-login">LOGIN</h1>
     </div>
     <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <input id="username" formControlName="username" type="text" placeholder="Nome de usuário">
+      <div class="input-user">
+        <input
+          id="username"
+          formControlName="username"
+          type="text"
+          placeholder="Email"
+        />
+      </div>
 
       <div class="password-container">
-        <input id="password" formControlName="password"
-               [type]="isPasswordVisible ? 'text' : 'password'"
-               placeholder="Senha" minlength="5">
+        <input
+          id="password"
+          formControlName="password"
+          [type]="isPasswordVisible ? 'text' : 'password'"
+          placeholder="Senha"
+          minlength="5"
+        />
         <span class="toggle-password" (click)="togglePasswordVisibility()">
           <i [class]="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
         </span>
       </div>
 
       <button class="botao" type="submit">Entrar</button>
-      <a routerLink="/forgot-password" class="forgot-password">Esqueci a senha</a>
+      <a routerLink="/forgot-password" class="forgot-password"
+        >Esqueci a senha</a
+      >
       <a routerLink="cadastrar" class="forgot-password">Registrar</a>
     </form>
   </div>

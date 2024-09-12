@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { Toast, ToastrService } from 'ngx-toastr';
 import { CadastrarComponent } from '../cadastrar/cadastrar.component';
+import { Usuario } from '../../models/usuario-response.model';
 
 @Component({
   selector: 'app-default-login-layout',
@@ -16,6 +17,7 @@ import { CadastrarComponent } from '../cadastrar/cadastrar.component';
 export class LoginComponent {
   loginForm: FormGroup;
   isPasswordVisible = false;
+  usuario: Usuario = new Usuario();
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -26,23 +28,32 @@ export class LoginComponent {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
+
+    this.toastr.toastrConfig.timeOut = 800;
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
     if (this.loginForm.valid) {
-      // Lógica de autenticação aqui
       this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe({
         next: () => {
-          // Exibir mensagem de sucesso
-          this.toastr.success('Login efetuado com sucesso!');
+          this.loginService.getUsuarioByEmail(this.loginForm.value.username).subscribe(
+            (data) => {
+              this.usuario.id = data.id;
+              this.usuario.nome = data.nome;
+              this.usuario.email = data.email;
+              sessionStorage.setItem('usuario', JSON.stringify(this.usuario));
+              this.toastr.success('Olá '+ this.usuario.nome);
+            },
+            (error) => {
+              this.toastr.error('Usuário ou senha invalidos!');
+          });
+
+          this.router.navigate(['/menu']);
         },
         error: (err) => {
-          // Exibir mensagem de erro
           this.toastr.error('Usuário ou senha invalidos!');
         }
       });
-      //this.router.navigate(['/listar-contas']);
     }
   }
 

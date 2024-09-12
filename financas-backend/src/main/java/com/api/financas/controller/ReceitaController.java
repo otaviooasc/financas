@@ -2,6 +2,7 @@ package com.api.financas.controller;
 
 import com.api.financas.dto.receita.ReceitaRequestDTO;
 import com.api.financas.exceptions.GenericaException;
+import com.api.financas.exceptions.NaoFoiEncontradoException;
 import com.api.financas.service.ReceitaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,11 @@ public class ReceitaController {
 
     @GetMapping("/listar/{id}")
     public ResponseEntity<Object> listarTodos(@PathVariable String id) {
-        return ResponseEntity.ok().body(receitaService.listarTodos(id));
+        try {
+            return ResponseEntity.ok().body(receitaService.listarTodos(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @GetMapping("/listar-por-data/id/{id}/data/{data}")
@@ -47,8 +52,13 @@ public class ReceitaController {
         return ResponseEntity.ok().body(receitaService.listarPorData(id, data));
     }
 
+    @GetMapping("/listar-por-receita/{id}")
+    public ResponseEntity<Object> listarPorId(@PathVariable String id) throws NaoFoiEncontradoException {
+        return ResponseEntity.ok().body(receitaService.ListarPorId(id));
+    }
+
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws GenericaException {
+    public ResponseEntity<Void> deletarReceita(@PathVariable String id) throws NaoFoiEncontradoException {
         receitaService.deletar(id);
         return ResponseEntity.noContent().build();
     }

@@ -5,6 +5,7 @@ import com.api.financas.domain.usuario.Usuario;
 import com.api.financas.dto.receita.ReceitaRequestDTO;
 import com.api.financas.dto.receita.ReceitaResponseDTO;
 import com.api.financas.exceptions.GenericaException;
+import com.api.financas.exceptions.NaoFoiEncontradoException;
 import com.api.financas.repositories.ReceitaRespository;
 import com.api.financas.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class ReceitaService {
         var usuario = new Usuario();
 
         usuario = usuarioRepository.findById(UUID.fromString(id))
-                .orElseThrow(() -> new GenericaException("Nenhum usuário encontrado com esse id: " + id));
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhum usuário encontrado com esse id: " + id));
 
         receita.setUsuario(usuario);
         repository.save(receita);
@@ -41,7 +42,7 @@ public class ReceitaService {
         var receita = new Receita();
 
         receita = repository.findById(receitaId)
-                .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + receitaId));
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita encontrado com esse id: " + receitaId));
 
         receita.setData(receitaRequestDTO.data());
         receita.setSaldoLiquido(receitaRequestDTO.saldoLiquido());
@@ -54,10 +55,10 @@ public class ReceitaService {
 
     public List<ReceitaResponseDTO> listarTodos(String id) {
         UUID usuarioId = UUID.fromString(id);
-        List<Receita> receitaList = repository.findByUsuarioId(usuarioId);
+        List<Receita> receitaList = repository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         if (receitaList.isEmpty()) {
-            throw new RuntimeException("Nenhum usuário encontrado com esse id: " + id);
+            throw new NaoFoiEncontradoException("Nenhum usuário encontrado com esse id: " + id);
         }
 
         return receitaList.stream()
@@ -67,13 +68,19 @@ public class ReceitaService {
 
     public ReceitaResponseDTO listarPorData(String id, LocalDate data) throws GenericaException {
         Receita receita = repository.findByUsuarioIdAndData(UUID.fromString(id), data)
-                .orElseThrow(() -> new GenericaException("Nenhuma receita foi encontrada nessa data: " + data));
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita foi encontrada nessa data: " + data));
         return new ReceitaResponseDTO(receita);
     }
 
-    public void deletar(String idReceita) throws GenericaException {
+    public void deletar(String idReceita) {
         var receita = repository.findById(UUID.fromString(idReceita))
-                .orElseThrow(() -> new GenericaException("Nenhuma receita encontrado com esse id: " + idReceita));
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita encontrado com esse id: " + idReceita));
         repository.deleteById(UUID.fromString(idReceita));
     }
+
+    public ReceitaResponseDTO ListarPorId(String id) {
+        return new ReceitaResponseDTO(repository.findById(UUID.fromString(id))
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita encontrado com esse id: " + id)));
+    }
+
 }

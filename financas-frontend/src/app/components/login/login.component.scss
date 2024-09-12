@@ -3,36 +3,37 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .div-login {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center; /* centraliza verticalmente */
-  height: 100vh; /* altura da viewport */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   flex-direction: column;
 }
 
 .back-login {
-  font-family: "Poetsen One", sans-serif;
-  color:white;
+  font-family: 'Poetsen One', sans-serif;
+  color: white;
 }
 
 .logo-login {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px 0;
   display: flex;
   justify-content: center;
 }
 
 .container {
-  width: 70vw; /* 50% da largura da viewport */
-  height: 300px; /* Ajuste a altura conforme necessário */
-  background: linear-gradient(rgb(116, 116, 116), rgb(46, 46, 46)); /* Cor de fundo cinza */
-  border-radius: 10px; /* Borda arredondada */
+  width: 70vw;
+  height: 300px;
+  background: linear-gradient(rgb(116, 116, 116), rgb(46, 46, 46));
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 5%;
 }
 
 .form-login {
@@ -41,55 +42,69 @@
   align-items: center;
 }
 
-input[type="text"],
-input[type="password"] {
-  text-align: center;
-  font-family: "Poetsen One", sans-serif;
-  width: 80%; /* Ajuste a largura conforme necessário */
-  padding: 8px; /* Ajuste o preenchimento conforme necessário */
-  border: 1px solid #ccc; /* Cor da borda */
-  border-radius: 10px; /* Raio do arredondamento */
-  outline: none; /* Remove a borda de foco padrão */
-  margin-bottom: 16px;
+.input-user
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-color: dodgerblue; /* Cor da borda ao focar */
+#username,
+#password {
   text-align: center;
+  font-family: 'Poetsen One', sans-serif;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 16px;
+  width: 100%;
+  margin-right: 2px;
+}
+
+#username:focus,
+#password:focus {
+  border-color: dodgerblue;
+}
+
+#password {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .toggle-password {
-  margin-left: 5%;
-  transform: translateY(-30%);
+  position: absolute;
+  right: 10px;
+  transform: translateY(-40%);
   cursor: pointer;
-  font-size: 20px; /* Tamanho do ícone */
 }
 
 .password-container {
+  position: relative;
+  width: 100%;
   display: flex;
-  width: 82.5%;
-  flex-direction: row;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
 }
 
 .botao {
   font-family: "Poetsen One", sans-serif;
-  padding: 10px; /* Ajuste o preenchimento conforme necessário */
+  padding: 10px;
   border: none;
-  border-radius: 20px; /* Borda arredondada */
-  background-color: rgb(0, 0, 0); /* Cor de fundo padrão */
-  color: white; /* Cor do texto */
-  cursor: pointer; /* Mostra o cursor como uma mão ao passar o mouse */
-  transition: background-color 0.3s; /* Adiciona uma transição suave */
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
   width: 40%;
 }
 
 .botao:hover {
-  background-color: rgb(126, 125, 125); /* Mudança de cor ao passar o mouse */
+  background-color: rgb(126, 125, 125);
 }
 
-/* Estilo do link Esqueci a senha */
 .forgot-password {
   font-family: "Poetsen One", sans-serif;
   display: inline-block;

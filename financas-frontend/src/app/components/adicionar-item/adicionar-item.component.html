@@ -1,0 +1,37 @@
+<div class="div-login">
+  <div class="container">
+    <div class="logo-login">
+      <h1 class="back-login">Cadastrar</h1>
+    </div>
+    <form
+      class="form-login"
+      [formGroup]="receitaForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="input-data">
+        <input id="data" formControlName="data" type="date" />
+      </div>
+
+      <div class="input-user">
+        <input id="saldoLiquido" type="number" formControlName="saldoLiquido" placeholder="Saldo liquido">
+      </div>
+
+      <div class="input-user">
+        <input id="rendimentoAluguel" type="number" formControlName="rendimentoAluguel" placeholder="Rendimento Aluguel">
+      </div>
+
+      <div class="input-user">
+        <input id="rendimentoAplicacoes" type="number" formControlName="rendimentoAplicacoes" placeholder="Rendimento aplicações">
+      </div>
+
+      <div class="input-user">
+        <input id="outros" type="number" formControlName="outros" placeholder="Outros rendimentos">
+      </div>
+
+      <div class="buttom-div">
+        <button class="botao" type="submit">Confirmar</button>
+        <button class="botao" (click)="voltarInicio()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
