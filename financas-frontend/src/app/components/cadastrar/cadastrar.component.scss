@@ -73,16 +73,20 @@
 }
 
 #password {
-  width: calc(100% - 30px); /* Ajuste a largura para deixar espaço para o ícone */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .toggle-password {
-  transform: translateY(-30%);
+  position: absolute;
+  right: 10px;
+  transform: translateY(-40%);
   cursor: pointer;
-  font-size: 20px; /* Tamanho do ícone */
 }
 
 .password-container {
+  position: relative;
+  width: 100%;
   display: flex;
   width: 100%;
   align-items: center;

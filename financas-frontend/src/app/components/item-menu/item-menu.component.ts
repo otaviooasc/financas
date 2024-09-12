@@ -14,6 +14,7 @@ import { ReceitaService } from '../../services/receita.service';
 export class ItemMenuComponent {
   @Input() receita!: Receita;
   @Output() deleteItem = new EventEmitter<Receita>();
+  @Output() editarItem = new EventEmitter<Receita>();
 
   private receitaResponse!: Receita;
 
@@ -29,5 +30,9 @@ export class ItemMenuComponent {
 
   onDelete(receita: Receita) {
     this.deleteItem.emit(receita);
+  }
+
+  onEditarItem(receita: Receita) {
+    this.editarItem.emit(receita);
   }
 }

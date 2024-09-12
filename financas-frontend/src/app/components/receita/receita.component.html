@@ -7,7 +7,7 @@
       <h1 class="back-login">Receita</h1>
     </div>
     <div class="receitas">
-      <app-item-menu *ngFor="let receita of receitas" [receita]="receita" (deleteItem)="deleteReceita($event)"></app-item-menu>
+      <app-item-menu *ngFor="let receita of receitas" [receita]="receita" (deleteItem)="deleteReceita($event)" (editarItem)="editarReceita($event)"></app-item-menu>
     </div>
     <div class="meu-componente" routerLink="adicionar-item">
       <span class="plus">+</span>

@@ -5,6 +5,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ReceitaComponent } from './components/receita/receita.component';
 import { ItemMenuComponent } from './components/item-menu/item-menu.component';
 import { AdicionarItemComponent } from './components/adicionar-item/adicionar-item.component';
+import { EditarItemComponent } from './components/editar-item/editar-item.component';
 
 export const routes: Routes = [
   {
@@ -38,5 +39,10 @@ export const routes: Routes = [
   {
     path: "receita/adicionar-item",
     component: AdicionarItemComponent
+  },
+  {
+    path: "receita/editar-item",
+    component: EditarItemComponent
   }
+
 ];

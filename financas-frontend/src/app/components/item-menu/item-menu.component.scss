@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   background: linear-gradient(rgb(242, 248, 252), rgb(149, 160, 179));
   border-radius: 10px;
 }
@@ -28,6 +27,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 90%;
 }
 
 .div-img {
@@ -39,7 +39,6 @@
 }
 
 .div-text {
-  width: 35vw;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-left: 10px;
 }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ReceitaService } from '../../services/receita.service';
 import { Receita } from '../../models/receita-response.model';
 import { ItemMenuComponent } from "../item-menu/item-menu.component";
@@ -20,7 +20,8 @@ export class ReceitaComponent implements OnInit{
   receitas: Receita[] = [];
 
   constructor(private receitaService: ReceitaService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
     this.toastr.toastrConfig.timeOut = 700;
   }
@@ -51,5 +52,9 @@ export class ReceitaComponent implements OnInit{
         }
       }
     );
+  }
+
+  editarReceita(receita: Receita) {
+    this.router.navigate(['receita/editar-item'], {state: {receita: JSON.parse(JSON.stringify(receita))} });
   }
 }
