@@ -42,7 +42,7 @@ public class ReceitaService {
         var receita = new Receita();
 
         receita = repository.findById(receitaId)
-                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita encontrado com esse id: " + receitaId));
+                .orElseThrow(() -> new NaoFoiEncontradoException("Nenhuma receita encontrada com esse id: " + receitaId));
 
         receita.setData(receitaRequestDTO.data());
         receita.setSaldoLiquido(receitaRequestDTO.saldoLiquido());

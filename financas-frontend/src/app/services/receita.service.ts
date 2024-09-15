@@ -59,6 +59,20 @@ export class ReceitaService {
     );
   }
 
+  editarReceita(receita: Receita) {
+    const token = sessionStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    const url = `${this.apiUrl}/alterar/${receita.id}`;
+    return this.httpClient.post(url, receita, {headers})
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   delete(receita: Receita){
     const token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.back-login {
+  font-family: "Poetsen One", sans-serif;
+  color:rgb(0, 0, 0);
+}
+
+.logo-login {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 90vw;
+  height: 80%;
+  background: linear-gradient(rgb(169, 232, 248), rgb(132, 136, 136));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-user,
+.input-email,
+.input-data
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#data,
+#saldoLiquido,
+#rendimentoAluguel,
+#rendimentoAplicacoes,
+#outros {
+  text-align: center;
+  font-family: 'Poetsen One', sans-serif;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 16px;
+  width: 100%;
+  margin-right: 2px;
+  -webkit-appearance: none;
+}
+
+#username:focus,
+#data:focus,
+#email:focus {
+  border-color: dodgerblue; /* Cor da borda ao focar */
+  text-align: center;
+}
+
+.botao {
+  font-family: "Poetsen One", sans-serif;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.botao:hover {
+  background-color: rgb(126, 125, 125);
+}
+
+.buttom-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
